@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  @apply bg-base-200/40 text-base-content;
+}
+
+.card-md {
+  @apply rounded-md bg-base-100 shadow;
+}
+
+.btn-normal {
+  @apply btn h-12 gap-2 p-3;
+}
