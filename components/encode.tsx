@@ -1,13 +1,8 @@
 "use client";
 import React, { useRef, useState } from "react";
-import {
-  ArrowDown,
-  ArrowSwitch,
-  ArrowUp,
-  Clipboard,
-} from "@/app/components/svg";
-import Textarea from "@/app/components/textarea";
-import { CheckCircle, XCircle } from "lucide-react";
+import { ArrowDown, ArrowSwitch, ArrowUp } from "@/components/svg";
+import Textarea from "@/components/textarea";
+import { Clipboard, ClipboardCheck, ClipboardX } from "lucide-react";
 
 function Encode(props: {
   encode: (str: string) => string;
@@ -67,13 +62,11 @@ function Encode(props: {
   function copyStatusIcon() {
     switch (copyStatus) {
       case null:
-        return <Clipboard />;
+        return <Clipboard size={18} />;
       case true:
-        return (
-          <CheckCircle size={18} className="h-5 w-5 p-[1px] text-success" />
-        );
+        return <ClipboardCheck size={18} className="text-success" />;
       case false:
-        return <XCircle size={18} className="h-5 w-5 p-[1px] text-error" />;
+        return <ClipboardX size={18} className="text-error" />;
     }
   }
 

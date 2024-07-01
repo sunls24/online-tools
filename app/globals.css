@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  html,
+  body {
+    @apply h-full;
+  }
+}
+
 :root {
   @apply bg-base-200/40 text-base-content;
 }

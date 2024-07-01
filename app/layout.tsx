@@ -1,12 +1,16 @@
 import "./globals.css";
 import type { Metadata, Viewport } from "next";
 import React from "react";
-import Header from "@/app/components/header";
+import Header from "@/components/header";
+import Footer from "@/components/footer";
 
 export const metadata: Metadata = {
-  title: "在线工具箱",
-  description: "简洁高效的多功能在线工具箱",
-  keywords: ["在线工具箱", "base64", "编解码"],
+  title: {
+    default: "在线工具箱",
+    template: "%s - 在线工具箱",
+  },
+  description:
+    "一款简洁高效的在线工具箱｜Base64 编解码、URL 编解码、JSON 格式化工具",
   appleWebApp: {
     title: "在线工具箱",
   },
@@ -17,7 +21,10 @@ export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   maximumScale: 1,
-  themeColor: "#F9F9F9",
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#F9F9F9" },
+    { media: "(prefers-color-scheme: dark)", color: "#141619" },
+  ],
 };
 
 export default function RootLayout({
@@ -30,9 +37,10 @@ export default function RootLayout({
       <head>
         <link rel="manifest" href="/manifest.json"></link>
       </head>
-      <body className="mx-auto flex w-11/12 max-w-3xl flex-col gap-5 py-5">
+      <body className="mx-auto flex w-11/12 max-w-3xl flex-col gap-5">
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );

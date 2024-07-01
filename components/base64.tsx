@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import Encode from "@/app/components/encode";
+import Encode from "@/components/encode";
 
 function Base64() {
   return <Encode encode={btoa} decode={atob} />;

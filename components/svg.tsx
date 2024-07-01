@@ -82,44 +82,6 @@ export function ArrowUp({ className = "w-5 h-5" }: { className?: string }) {
   );
 }
 
-export function Clipboard({ className = "w-5 h-5" }: { className?: string }) {
-  return (
-    <svg
-      width="512"
-      height="512"
-      viewBox="0 0 24 24"
-      xmlns="http://www.w3.org/2000/svg"
-      className={className}
-    >
-      <path
-        fill="currentColor"
-        d="M17 4h-1.18A3 3 0 0 0 13 2h-2a3 3 0 0 0-2.82 2H7a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3Zm-7 1a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v1h-4Zm8 14a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h1v1a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V6h1a1 1 0 0 1 1 1Z"
-      />
-    </svg>
-  );
-}
-
-export function Open({
-  className = "w-6 h-6 text-primary",
-}: {
-  className?: string;
-}) {
-  return (
-    <svg
-      width="512"
-      height="512"
-      viewBox="0 0 32 32"
-      xmlns="http://www.w3.org/2000/svg"
-      className={className}
-    >
-      <path
-        fill="currentColor"
-        d="M8.5 5A3.5 3.5 0 0 0 5 8.5v15A3.5 3.5 0 0 0 8.5 27h15a3.5 3.5 0 0 0 3.5-3.5V19a1 1 0 1 1 2 0v4.5a5.5 5.5 0 0 1-5.5 5.5h-15A5.5 5.5 0 0 1 3 23.5v-15A5.5 5.5 0 0 1 8.5 3H13a1 1 0 1 1 0 2H8.5ZM18 4a1 1 0 0 1 1-1h9a1 1 0 0 1 1 1v9a1 1 0 1 1-2 0V6.414l-7.293 7.293a1 1 0 0 1-1.414-1.414L25.586 5H19a1 1 0 0 1-1-1Z"
-      />
-    </svg>
-  );
-}
-
 export function Title({ className = "w-5 h-5" }: { className?: string }) {
   return (
     <svg

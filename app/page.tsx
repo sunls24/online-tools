@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { tools } from "@/app/tools";
-import { Open } from "@/app/components/svg";
+import { tools } from "@/lib/tools";
+import { ExternalLink } from "lucide-react";
 
 export default function Home() {
   return (
@@ -9,7 +9,7 @@ export default function Home() {
         <Link
           key={index}
           href={value.route}
-          className="flex h-20 items-center gap-4 rounded-md border border-neutral-content/60 px-5 font-medium shadow transition hover:scale-[1.02] hover:bg-base-200/80 hover:shadow-md"
+          className="flex h-20 items-center gap-4 rounded-md border border-neutral-content/50 px-5 font-medium shadow transition hover:scale-[1.02] hover:bg-base-200/90 hover:shadow-md"
         >
           <img
             src={value.image}
@@ -19,7 +19,7 @@ export default function Home() {
           />
           {value.name}
           <span className="flex-1" />
-          <Open />
+          <ExternalLink size={20} strokeWidth={1.8} />
         </Link>
       ))}
     </main>

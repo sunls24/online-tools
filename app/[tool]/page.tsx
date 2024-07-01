@@ -1,8 +1,8 @@
 import React, { Suspense } from "react";
-import { tools } from "@/app/tools";
+import { tools } from "@/lib/tools";
 import { Metadata } from "next";
-import { Title } from "@/app/components/svg";
-import Loading from "@/app/components/loading";
+import { Title } from "@/components/svg";
+import Loading from "@/components/loading";
 
 export function generateMetadata({
   params,
@@ -12,7 +12,7 @@ export function generateMetadata({
   const tool = tools.find((obj) => obj.route === params.tool);
   if (!tool) {
     return {
-      title: "你来到了无人区 ...",
+      title: "你来到了无人区",
     };
   }
   return {
@@ -23,7 +23,7 @@ export function generateMetadata({
 function Page({ params }: { params: { tool: string } }) {
   const tool = tools.find((obj) => obj.route === params.tool);
   const ToolComponent = React.lazy(
-    () => import(`@/app/components/${tool ? params.tool : "empty"}`),
+    () => import(`@/components/${tool ? params.tool : "empty"}`),
   );
   return (
     <main className="card-md flex flex-col gap-4 px-5 py-4">

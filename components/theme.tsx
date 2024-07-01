@@ -6,7 +6,7 @@ import { MoonStar, Sun } from "lucide-react";
 function Theme() {
   useEffect(() => themeChange(false), []);
   return (
-    <div className="absolute right-4">
+    <div className="absolute right-6">
       <button data-set-theme="dark" data-act-class="hidden">
         <MoonStar strokeWidth={1.8} />
       </button>
