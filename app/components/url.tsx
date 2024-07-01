@@ -7,11 +7,11 @@ function Url() {
 }
 
 function encodeUrl(str: string): string {
-  return encodeURI(str);
+  return encodeURIComponent(str);
 }
 
 function decodeUrl(str: string): string {
-  return decodeURI(str);
+  return decodeURIComponent(str);
 }
 
 export default Url;

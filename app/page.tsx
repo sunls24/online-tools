@@ -9,7 +9,7 @@ export default function Home() {
         <Link
           key={index}
           href={value.route}
-          className="flex h-20 items-center gap-4 rounded-md border px-5 font-medium shadow transition hover:scale-[1.02] hover:bg-base-200/80 hover:shadow-md"
+          className="flex h-20 items-center gap-4 rounded-md border border-neutral-content/60 px-5 font-medium shadow transition hover:scale-[1.02] hover:bg-base-200/80 hover:shadow-md"
         >
           <img
             src={value.image}
