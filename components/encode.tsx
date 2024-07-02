@@ -15,27 +15,30 @@ function Encode(props: {
   const [copyStatus, setCopyStatus] = useState<boolean | null>(null);
 
   function encodeClick() {
-    if (!upRef.current!.value) {
+    if (!upRef.current?.value) {
       return;
     }
-    downRef.current!.value = props.encode(upRef.current!.value);
+    downRef.current!.value = props.encode(upRef.current.value);
     setIsEncode(true);
     setCopyStatus(null);
   }
 
   function decodeClick() {
-    if (!downRef.current!.value) {
+    if (!downRef.current?.value) {
       return;
     }
-    upRef.current!.value = props.decode(downRef.current!.value);
+    upRef.current!.value = props.decode(downRef.current.value);
     setIsEncode(false);
     setCopyStatus(null);
   }
 
   function switchClick() {
-    const upText = upRef.current!.value;
-    upRef.current!.value = downRef.current!.value;
-    downRef.current!.value = upText;
+    if (!upRef.current || !downRef.current) {
+      return;
+    }
+    const upText = upRef.current.value;
+    upRef.current.value = downRef.current.value;
+    downRef.current.value = upText;
   }
 
   function copyClick() {
@@ -72,8 +75,8 @@ function Encode(props: {
 
   return (
     <>
-      <Textarea ref2={upRef} onChange={() => textAreaChange(true)} />
-      <div className="flex items-center gap-2 sm:gap-5">
+      <Textarea ref={upRef} onChange={() => textAreaChange(true)} />
+      <div className="flex items-center gap-2 sm:gap-4">
         <button className="btn-normal" onClick={encodeClick}>
           <ArrowDown />
           编码
@@ -93,7 +96,7 @@ function Encode(props: {
           <input ref={toggleRef} type="checkbox" className="toggle toggle-sm" />
         </label>
       </div>
-      <Textarea ref2={downRef} onChange={() => textAreaChange(false)} />
+      <Textarea ref={downRef} onChange={() => textAreaChange(false)} />
       <div>
         <button className="btn btn-ghost btn-sm gap-1 px-1" onClick={copyClick}>
           {copyStatusIcon()}拷贝结果

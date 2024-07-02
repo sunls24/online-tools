@@ -1,8 +1,8 @@
 import React, { Suspense } from "react";
 import { tools } from "@/lib/tools";
 import { Metadata } from "next";
-import { Title } from "@/components/svg";
 import Loading from "@/components/loading";
+import { Hash } from "lucide-react";
 
 export function generateMetadata({
   params,
@@ -26,10 +26,10 @@ function Page({ params }: { params: { tool: string } }) {
     () => import(`@/components/${tool ? params.tool : "empty"}`),
   );
   return (
-    <main className="card-md flex flex-col gap-4 px-5 py-4">
+    <main className="card-md flex flex-col gap-2 overflow-auto p-3 sm:gap-4 sm:px-5 sm:py-4">
       {tool && (
         <h2 className="font-medium">
-          {<Title className="relative bottom-0.5 mr-1 inline-block h-5 w-5" />}
+          <Hash className="relative bottom-0.5 mr-1 inline-block" size={20} />
           {tool.name}
         </h2>
       )}

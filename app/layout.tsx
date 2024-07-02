@@ -37,7 +37,7 @@ export default function RootLayout({
       <head>
         <link rel="manifest" href="/manifest.json"></link>
       </head>
-      <body className="mx-auto flex w-11/12 max-w-3xl flex-col gap-5">
+      <body className="mx-auto flex w-11/12 max-w-3xl flex-col">
         <Header />
         {children}
         <Footer />
