@@ -3,8 +3,16 @@ import React, { useEffect } from "react";
 import { themeChange } from "theme-change";
 import { MoonStar, Sun } from "lucide-react";
 
+const THEME_KEY = "theme";
+
 function Theme() {
-  useEffect(() => themeChange(false), []);
+  useEffect(() => {
+    if (!localStorage.getItem(THEME_KEY)) {
+      localStorage.setItem(THEME_KEY, "light");
+    }
+    themeChange(false);
+  }, []);
+
   return (
     <div className="absolute right-6">
       <button data-set-theme="dark" data-act-class="hidden">
