@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     template: "%s - 在线工具箱",
   },
   description:
-    "一款简洁高效的在线工具箱｜JSON 在线解析及格式化验证、Base64 编解码、URL 编解码",
+    "一款简洁高效的在线工具箱｜JSON 在线解析及格式化验证，Crontab 执行时间计算，Base64 / URL 编解码。",
   appleWebApp: {
     title: "在线工具箱",
   },

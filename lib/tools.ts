@@ -11,6 +11,11 @@ export const tools: readonly ToolItem[] = [
     route: "json",
   },
   {
+    name: "Crontab 时间计算",
+    image: "img/letter-counter.svg",
+    route: "crontab",
+  },
+  {
     name: "Base64 编解码",
     image: "img/base64-encoder-decoder.svg",
     route: "base64",
